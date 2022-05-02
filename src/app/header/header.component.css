@@ -1,0 +1,22 @@
+header{
+    background-color: aliceblue;
+    padding: 0px;
+    border-bottom: 1px solid rgb(244, 35, 35);
+}
+a{
+    color:red;
+}
+a:hover{
+    background-color: blueviolet;
+    color: aliceblue;
+
+}
+.container{
+    display: flex;
+justify-content: space-between;
+margin: 0%;
+}
+a.logo{
+    font-weight: bold;
+    padding: 1em;
+}
