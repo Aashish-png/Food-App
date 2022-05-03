@@ -1,14 +1,15 @@
 header{
-    background-color: aliceblue;
+    background-color: rgb(5, 16, 25);
     padding: 0px;
-    border-bottom: 1px solid rgb(244, 35, 35);
+    border-bottom: 1px solid rgb(224, 252, 7);
 }
 a{
-    color:red;
+    color:rgb(211, 233, 9);
 }
 a:hover{
-    background-color: blueviolet;
-    color: aliceblue;
+    background-color: rgb(251, 255, 0);
+    color: rgb(0, 0, 0);
+    
 
 }
 .container{
@@ -19,4 +20,18 @@ margin: 0%;
 a.logo{
     font-weight: bold;
     padding: 1em;
+}
+button.AddData {
+    position: absolute;
+    top: 9px;
+    left: 115px;
+    padding: 7px;
+    background-color: yellow;
+    border-radius: 6px;
+    font-weight: 900;
+    font-family: cursive;
+}
+button.AddData:hover{
+    background-color: rgb(92, 238, 19);
+    cursor: pointer;
 }

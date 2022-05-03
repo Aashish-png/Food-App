@@ -7,6 +7,10 @@ export class FoodService {
 
   constructor() { }
 
+getAllFoodByTag(tag:string):Food[]{
+  return tag=="All"?this.getAll():this.getAll().filter(food=>food.tags?.includes(tag))
+}
+
   getAll():Food[]{
  return[ 
    {
@@ -26,7 +30,7 @@ export class FoodService {
     name:"pizza",
     favorite:false,
     stars:4.5,
-    tags:["fastFodd","Lunch"],
+    tags:["fastFodd","brakfast"],
     imgaeUrl:'/assets/food-2.jpg',
     origins:["italy","indonesia"],
     cookTime:"30-40 min"
@@ -37,7 +41,7 @@ export class FoodService {
     name:"burger",
     favorite:false,
     stars:4.5,
-    tags:["fastFodd","Lunch"],
+    tags:["fastFodd","dinner"],
     imgaeUrl:'/assets/food-3.jpg',
     origins:["italy","sweden"],
     cookTime:"30-40 min"
@@ -48,7 +52,7 @@ export class FoodService {
     name:"burger",
     favorite:false,
     stars:4.5,
-    tags:["fastFodd","Lunch"],
+    tags:["fastFodd","dinner"],
     imgaeUrl:'/assets/food-4.jpg',
     origins:["india ","Rome"],
     cookTime:"30-40 min"
@@ -59,7 +63,7 @@ export class FoodService {
     name:"fires",
     favorite:false,
     stars:4.5,
-    tags:["fastFodd","Lunch"],
+    tags:["fastFodd","breakfast"],
     imgaeUrl:'/assets/food-5.jpg',
     origins:["italy","Rome"],
     cookTime:"30-40 min"
