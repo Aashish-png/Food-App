@@ -2,6 +2,8 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { initializeApp } from "firebase/app";
+
 export const environment = {
  firebase:{
     apiKey: "AIzaSyBoUZvoyygVg3ehk7Sm3E2bNaRg0eB9-_A",
@@ -14,6 +16,20 @@ export const environment = {
   },
   production: false
 };
+
+const firebaseConfig={
+  
+    apiKey: "AIzaSyBoUZvoyygVg3ehk7Sm3E2bNaRg0eB9-_A",
+    authDomain: "food-app-fbd77.firebaseapp.com",
+    projectId: "food-app-fbd77",
+    storageBucket: "food-app-fbd77.appspot.com",
+    messagingSenderId: "541205940105",
+    appId: "1:541205940105:web:4fa1c9faf793c094024358",
+    measurementId: "G-S06ESDWXD6"
+  
+}
+initializeApp(firebaseConfig)
+
 
 /*
  * For easier debugging in development mode, you can import the following file

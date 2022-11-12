@@ -25,7 +25,7 @@ getAllFoodByTag(tag:string):Food[]{
     cookTime:"30-40 min"
   },
   {
-    id:1,
+    id:2,
     price:10,
     name:"pizza",
     favorite:false,
@@ -36,7 +36,7 @@ getAllFoodByTag(tag:string):Food[]{
     cookTime:"30-40 min"
   },
   {
-    id:1,
+    id:3,
     price:10,
     name:"burger",
     favorite:false,
@@ -47,7 +47,7 @@ getAllFoodByTag(tag:string):Food[]{
     cookTime:"30-40 min"
   },
   {
-    id:1,
+    id:3,
     price:10,
     name:"burger",
     favorite:false,
@@ -58,7 +58,7 @@ getAllFoodByTag(tag:string):Food[]{
     cookTime:"30-40 min"
   },
   {
-    id:1,
+    id:4,
     price:10,
     name:"fires",
     favorite:false,
@@ -69,7 +69,7 @@ getAllFoodByTag(tag:string):Food[]{
     cookTime:"30-40 min"
   },
   {
-    id:1,
+    id:5,
     price:10,
     name:"bread",
     favorite:false,
@@ -80,7 +80,7 @@ getAllFoodByTag(tag:string):Food[]{
     cookTime:"30-40 min"
   },
   {
-    id:1,
+    id:6,
     price:10,
     name:"sandwich",
     favorite:false,
@@ -91,7 +91,7 @@ getAllFoodByTag(tag:string):Food[]{
     cookTime:"30-40 min"
   },
   {
-    id:1,
+    id:7,
     price:10,
     name:"pizza",
     favorite:false,
