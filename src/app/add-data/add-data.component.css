@@ -103,3 +103,33 @@ button#btnSubmit {
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     /* Lowering the shadow */
 }
+
+img {
+    /* height: 27%;
+    width: 41%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    border-radius: 47px;
+    border: 2px solid palevioletred; */
+    height: 20rem;
+    width: 20rem;
+    border: 2px solid palevioletred;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color:blueviolet
+
+}
+h2 {
+    position: absolute;
+    left: 15%;
+    top: 60%;
+    backdrop-filter: brightness(0.3);
+    color: palevioletred;
+    opacity: 0.8;
+}

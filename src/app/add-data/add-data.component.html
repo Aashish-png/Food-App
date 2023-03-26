@@ -1,35 +1,41 @@
 <section>
-    <form  required #basic="ngForm" >
-       
-    <div class="container">
-        <label for="head" id="headi">Add Food Deatails</label>
-        
-        <label for="FoodName">Food Name</label>
-        <input type="text"  required #name="ngModel" name="name" [(ngModel)]="addData.name"  placeholder="Enter name of the food ">
-        
-        <label for="Origin">Origin</label>
-        <input type="text" name="origin" [(ngModel)]="addData.origin" alt="write the origin of food where it was first discover ">
-        
-        <div class="Child-Container">
-            <label for="Category">Category</label>
-            <label for="Break-Fast">Break-Fast</label>
-            <input id="check1" type="checkbox">
-            <label for="Lunch">Lunch</label>
-            <input id="check2" type="checkbox">
-            <label for="Dinner">Dinner</label>
-            <input id="check3" type="checkbox">
-        </div>
-        
-        <label for="image">Upload Image</label>
-        <input type="file" for="image"  (change)="chooseFile($event)"  name="image"> 
-        <button (click)="upload()" class="btn">UPLOAD </button>
-        <span style="color:white">{{msg}}</span>
+    <form required #basic="ngForm">
 
-        <label for="Desc">Food-Description</label>
-        <textarea name="desc" id="desc" cols="30" rows="10"  [(ngModel)]="addData.desc"></textarea>
-        
-        <button class="btn" (click)="AddData()" type="submit">Submit</button>
-    </div>
-    
-</form>
+        <div class="container">
+            <label for="head" id="headi">Add Food Deatails</label>
+
+            <label for="FoodName">Food Name</label>
+            <input type="text" required #name="ngModel" name="name" [(ngModel)]="addData.name"
+                placeholder="Enter name of the food ">
+
+            <label for="Origin">Origin</label>
+            <input type="text" name="origin" [(ngModel)]="addData.origin"
+                alt="write the origin of food where it was first discover ">
+
+            <div class="Child-Container">
+                <label for="Category">Category</label>
+                <label for="Break-Fast">Break-Fast</label>
+                <input id="check1" type="checkbox">
+                <label for="Lunch">Lunch</label>
+                <input id="check2" type="checkbox">
+                <label for="Dinner">Dinner</label>
+                <input id="check3" type="checkbox">
+            </div>
+            <div>
+                <label for="image">Upload Image</label>
+                <input type="file" for="image" (change)="chooseFile($event)" name="image">
+                <button (click)="upload()" class="btn">UPLOAD </button> 
+                <h2 *ngIf="!Uploaded"> Bring Food Here</h2>
+                <img   [src]="addData.url" >
+
+                <span style="color:white">{{msg}}</span>
+            </div>
+
+            <label for="Desc">Food-Description</label>
+            <textarea name="desc" id="desc" cols="30" rows="10" [(ngModel)]="addData.desc"></textarea>
+
+            <button class="btn" (click)="AddData()" type="submit">Submit</button>
+        </div>
+
+    </form>
 </section>

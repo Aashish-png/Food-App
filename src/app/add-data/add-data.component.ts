@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { CrudService } from '../services/food/crud.service';
+import { HotToastService } from '@ngneat/hot-toast';
 
   
 
@@ -11,14 +12,23 @@ import { CrudService } from '../services/food/crud.service';
 })
 export class AddDataComponent implements OnInit {
 addData: any ={}
+preview:any={
+  imgaeUrl:'/assets/preview.jpg',
+}
   file: any;
   f: undefined;
   msg: any;
-  constructor(private crud:CrudService) { }
+Uploaded:boolean=false;
+  constructor(private crud:CrudService,
+    private toastService: HotToastService) { }
 
   ngOnInit(): void {
-  }
 
+    if(this.addData.url==undefined || this.addData.url==null){
+      this.addData.url=this.preview.imgaeUrl;
+    }
+  }
+//==================for adding the Food data into the database =========================
   AddData(){
   let record:any={};
 // console.log("this add data =>",this.addData)
@@ -41,16 +51,26 @@ let category:any={}
     category['Dinner']="Dinner";
   }
   
-  record['category']=category
-  console.log("record=>",record)
-    
+  record['category']=category;
+  console.log("record=>",record);
+
+  
+  this.toastService.loading("Your Food Data is being Uploaded");
   this.crud.addObject(record).then((res:any)=>{
-    console.log("res=>",res)
-  })
+
+    if(res) {this.toastService.close()
+       this.toastService.success('Your Food Data is Successfully Added');
+       this.addData={}
+       this.addData.url=this.preview.imgaeUrl;
+        
+        }
+        
+   })
 
 
   }
 
+  // ==============for uploading image ===============
 
   chooseFile(event:any){
     this.file= event.target.files[0]
@@ -59,15 +79,11 @@ let category:any={}
     // this.upload();
   }
 
-
   upload(){
-
     debugger
     const storage = getStorage();
     const storageRef = ref(storage,  `Food/${this.file.name}`);
-   // 
     const uploadTask = uploadBytesResumable(storageRef, this.file);
-    
     // Register three observers:
     // 1. 'state_changed' observer, called any time the state changes
     // 2. Error observer, called on failure
@@ -100,7 +116,9 @@ let category:any={}
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
           console.log('File available at', downloadURL);
 
-           this.addData.url=downloadURL
+           this.addData.url=downloadURL;
+          this.Uploaded=true;
+
         });
       }
     );

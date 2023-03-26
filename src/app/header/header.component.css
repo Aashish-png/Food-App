@@ -2,6 +2,10 @@ header{
     background-color: rgb(5, 16, 25);
     padding: 0px;
     border-bottom: 1px solid rgb(224, 252, 7);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
 }
 a{
     color:rgb(211, 233, 9);
@@ -30,6 +34,7 @@ button.AddData {
     border-radius: 6px;
     font-weight: 900;
     font-family: cursive;
+    color: black;
 }
 button.AddData:hover{
     background-color: rgb(92, 238, 19);

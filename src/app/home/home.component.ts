@@ -10,26 +10,38 @@ import { Food } from '../shared/models/food';
 export class HomeComponent implements OnInit {
 
 
-  foods:Food[]=[];
+  foods:any=[];
   constructor(private FD:FoodService, private router:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.router.params.subscribe(params=>{
 
       if(params['searchItem']){
-        this.foods=this.FD.getAll().filter(food=>
-          food.name.toLowerCase().includes(params['searchItem'].toLowerCase())
-        )
+      this.FD.getAll().then((res:any)=>{
+
+                this.foods=res
+                this.foods.filter((food:any)=>
+                  food.name.toLowerCase().includes(params['searchItem'].toLowerCase())
+                )
+
+        })
+        
+        
       }else if (params['tag']) {
-        this.foods=this.FD.getAllFoodByTag(params['tag'])
+        // this.foods=this.FD.getAllFoodByTag(params['tag'])
       } else {
-        this.foods= this.FD.getAll();
+         this.FD.getAll().then((result:any)=>{
+          this.foods=result
+        })
       }
      
     })
 
+      // this.FD.getAll().then((res:any)=>{
 
-
+      //   this.foods=res;
+      // })
+    console.log("this foods=>", this.foods)
   }
 
 }

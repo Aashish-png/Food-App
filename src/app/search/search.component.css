@@ -1,8 +1,14 @@
 div {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-
+  display: flex;
+  justify-content: center;
+  /* margin-top: 2rem; */
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  background: #0a0c17;
+  color: white;
+  padding-bottom: 2rem;
 }
 
 input.search {
@@ -34,4 +40,8 @@ button::after {
     content: "";
     clear: both;
     display: table;
+  }
+   .fa{
+    
+    background:inherit !important;
   }
